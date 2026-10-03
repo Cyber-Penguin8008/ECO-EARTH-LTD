@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallery — EcoEarth Ltd</title>
+<meta name="description" content="EcoEarth Ltd connects skilled agricultural workers worldwide with licensed UK growers, packhouses and food producers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#202020;
+  --soft:#585F63;
+  --line:#e3e8ee;
+  --bg:#ffffff;
+  --bg2:#f5f8fa;
+  --navy:#02456F;
+  --navy2:#013552;
+  --accent:#0373A5;
+  --accent-d:#035A95;
+  --accent-l:#0498BD;
+  --lime:#C9E260;
+  --grad:linear-gradient(90deg,#035A95 0%,#0498BD 100%);
+  
+  --amber:#e8a33d;
+  --maxw:1180px;
+  --h:'Titillium Web',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --b:'PT Serif',Georgia,'Times New Roman',serif;
+  --shadow:0 1px 2px rgba(19,38,55,.05),0 10px 30px -12px rgba(19,38,55,.18);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--b);font-size:17px;line-height:1.95;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h4{font-family:var(--h);font-weight:700;letter-spacing:-.02em;margin:0;color:var(--ink)}
+h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12}
+h2{font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.16;margin-bottom:20px}
+.label{display:block;font-family:var(--h);font-size:clamp(15px,1.4vw,19px);font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--h);font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:16px 34px;border:0;background:var(--grad);color:#fff;cursor:pointer;transition:.18s}
+
+.btn-w{background:#fff;color:var(--accent-d)}
+
+.btn-wo{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;padding:14px 32px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:#fff;border-bottom:0}
+header::before{content:"";position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);z-index:0}
+.nav{position:relative;z-index:1;display:flex;align-items:center;gap:28px;height:84px;max-width:none;padding:0 0 0 clamp(24px,5vw,100px)}
+.navright{flex:0 0 30.3%;display:flex;align-items:center;gap:18px;padding-left:40px;color:var(--ink)}
+.navphone{font-family:var(--h);font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.navphone:hover{color:var(--accent-d)}
+.bname{position:relative;display:block;line-height:1}
+.bname i{font-style:normal;color:var(--lime)}
+.brand{display:flex;align-items:center;gap:7px;font-family:var(--h);font-weight:700;font-size:21px;color:#fff;letter-spacing:.04em;text-transform:uppercase}
+.brand .ltd{position:absolute;right:-.18em;top:100%;margin-top:2px;font-size:8px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.mark{width:36px;height:36px;flex:0 0 36px}
+.nav-links{display:flex;gap:28px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+/* keep CONTACT exactly 15px clear of the end of the blue bar on wide screens.
+   .303 matches the 30.3% white area; clamp() matches the .nav left padding. */
+@media (min-width:1101px){.nav-links{margin-right:calc(clamp(24px,5vw,100px) * .303 - 13px)}}
+.nav-links a{position:relative;font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:30px 0;border-bottom:0;transition:.16s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:25px;height:3px;background:transparent;transition:background .16s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--lime)}
+.nav-links a:hover::after,.nav-links a[aria-current]::after{background:var(--lime)}
+.navtoggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.burger{display:none;margin-left:auto;align-items:center;background:transparent;border:1px solid rgba(255,255,255,.5);padding:10px 12px;cursor:pointer;color:#fff}
+.navtoggle:focus-visible+.burger{outline:2px solid var(--lime);outline-offset:2px}
+section{padding:92px 0}
+.pagehead{position:relative;background:#06385C;padding:84px 0;overflow:hidden}
+.ph-blue{position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);opacity:.8;z-index:1}
+.pagehead::before{content:"";position:absolute;inset:0;background-image:var(--img);background-size:cover;background-position:center;opacity:.5;z-index:0}
+.pagehead .wrap{position:relative;z-index:2}
+.pagehead .wrap{max-width:none;padding-left:clamp(24px,5vw,100px);padding-right:34%}
+.pagehead h1{color:#fff;margin-bottom:14px}
+.pagehead .label{color:#fff;opacity:.8}
+.pagehead p{color:rgba(255,255,255,.8);max-width:40em;margin:0}
+.note{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);padding:24px 26px}
+.note p{margin:0;color:var(--soft);font-size:15px}
+.note strong{color:var(--ink)}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tile{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg2);display:flex;align-items:flex-end}
+.tile::before{content:"";position:absolute;inset:0;z-index:1;background-image:var(--img);background-size:cover;background-position:center;transition:transform .5s}
+.tile:hover::before{transform:scale(1.05)}
+.tile .ph{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.tile .cap{position:relative;z-index:2;width:100%;padding:18px 20px;background:linear-gradient(180deg,rgba(2,69,111,0),rgba(2,69,111,.9))}
+.tile .cap b{display:block;font-family:var(--h);font-size:15px;color:#fff}
+.tile .cap span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.band{position:relative;overflow:hidden;color:#fff;text-align:center;padding:clamp(86px,11vw,140px) 0;background-image:var(--img);background-size:cover;background-position:center;background-attachment:fixed;background-color:#06385C}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,87,139,.9) 0%,rgba(14,138,176,.84) 100%)}
+.band .wrap{position:relative;z-index:1}
+@media (max-width:760px){.band{background-attachment:scroll}}
+.band h2{color:#fff}
+.band p{color:rgba(255,255,255,.78);max-width:46em;margin:0 auto 30px}
+.bcta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+footer{background:var(--navy2);color:rgba(255,255,255,.72);padding:72px 0 30px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:44px}
+footer h3{font-family:var(--h);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:11px}
+footer a{color:rgba(255,255,255,.72)}
+footer a:hover{color:var(--lime)}
+footer .brand{color:#fff}
+footer .brand .ltd{color:rgba(255,255,255,.55)}
+footer .about{margin:18px 0 0;max-width:30em;color:rgba(255,255,255,.6)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5)}
+@media (max-width:1000px){
+.f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+.nav-links,.nav>.btn{display:none}
+.burger{display:flex}
+.navtoggle:checked~.nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--accent-d);padding:6px 24px 18px}
+.navtoggle:checked~.nav-links li a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+section{padding:64px 0}
+.band{padding:64px 0}
+.gal{grid-template-columns:1fr}
+.f-grid{grid-template-columns:1fr}
+}
+@media (max-width:1100px){
+header::before{right:0}
+.navright{display:none}
+.nav{padding:0 24px}
+}
+
+@media (max-width:1100px){
+.ph-blue{right:0}
+.pagehead .wrap{padding-right:24px;padding-left:24px}
+}
+.totop{position:fixed;right:0;bottom:0;z-index:50;width:70px;height:70px;display:grid;place-items:center;background:var(--grad);color:#fff;transition:.18s}
+.totop:hover{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+@media (max-width:760px){.totop{width:54px;height:54px}}
+.btn{position:relative;overflow:hidden;z-index:0;isolation:isolate}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:-12%;width:124%;background:linear-gradient(90deg,#0498BD 0%,#035A95 100%);transform:translateX(112%);transition:transform 2.2s cubic-bezier(.12,1.3,.24,1);z-index:-1}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleY(1)}
+.btn-o::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-o:hover,.btn-o:focus-visible{color:#fff;border-color:#0498BD}
+.btn-w::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-w:hover,.btn-w:focus-visible{color:#fff}
+.btn-wo::before{background:#fff}
+.btn-wo:hover,.btn-wo:focus-visible{color:var(--accent-d);border-color:#fff}
+@media (prefers-reduced-motion:reduce){.btn::before{transition:none}}
+/* ---------- menu hover ---------- */
+.nav-links a{display:inline-block;transform-origin:center;will-change:transform}
+.nav-links a:hover,.nav-links a:focus-visible{animation:navwob .5s cubic-bezier(.3,.8,.4,1) forwards}
+@keyframes navwob{
+0%{transform:scale(1) rotate(0deg)}
+30%{transform:scale(1.14) rotate(-2.2deg)}
+55%{transform:scale(1.14) rotate(2.2deg)}
+78%{transform:scale(1.1) rotate(-1deg)}
+100%{transform:scale(1.09) rotate(0deg)}
+}
+
+/* ---------- reveal on scroll ---------- */
+html.js .sec-head,
+html.js .card,
+html.js .quote,
+html.js .ccard,
+html.js .tile,
+html.js .cgrid>div,
+html.js .note,
+html.js .offset .panel,
+html.js .frost,
+html.js .form,
+html.js .ticks{
+opacity:0;transform:translateY(30px);
+transition:opacity 1.15s cubic-bezier(.2,.7,.3,1),transform 1.15s cubic-bezier(.2,.7,.3,1)}
+html.js .grid2>*:first-child{transform:translateX(-38px)}
+html.js .grid2>*:last-child{transform:translateX(38px)}
+html.js .offset .panel{transform:translateX(-38px)}
+html.js .frost{transform:translateX(38px)}
+html.js .is-in.is-in.is-in{opacity:1;transform:none}
+html.js .grid4>*:nth-child(2),html.js .grid3>*:nth-child(2),html.js .gal>*:nth-child(2),html.js .cgrid>*:nth-child(2){transition-delay:.16s}
+html.js .grid4>*:nth-child(3),html.js .grid3>*:nth-child(3),html.js .gal>*:nth-child(3),html.js .cgrid>*:nth-child(3){transition-delay:.32s}
+html.js .grid4>*:nth-child(4),html.js .gal>*:nth-child(4),html.js .cgrid>*:nth-child(4){transition-delay:.48s}
+html.js .grid3>*:nth-child(4),html.js .gal>*:nth-child(5){transition-delay:.48s}
+html.js .gal>*:nth-child(6){transition-delay:.64s}
+html.js .gal>*:nth-child(7){transition-delay:.80s}
+html.js .gal>*:nth-child(8){transition-delay:.96s}
+html.js .gal>*:nth-child(9){transition-delay:1.12s}
+@media (prefers-reduced-motion:reduce){
+html.js .sec-head,html.js .card,html.js .quote,html.js .ccard,html.js .tile,html.js .cgrid>div,
+html.js .note,html.js .offset .panel,html.js .frost,html.js .form,html.js .ticks,
+html.js .grid2>*:first-child,html.js .grid2>*:last-child{opacity:1;transform:none;transition:none}
+.nav-links a:hover,.nav-links a:focus-visible{animation:none}
+}
+/* ---------- glass sections ---------- */
+.glass{position:relative;overflow:hidden;background:#eef5fa}
+.glass::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(560px 360px at 14% 12%, rgba(3,115,165,.26), transparent 62%),
+ radial-gradient(460px 320px at 82% 86%, rgba(201,226,96,.34), transparent 64%),
+ radial-gradient(400px 300px at 60% 20%, rgba(4,152,189,.2), transparent 60%)}
+.glass .wrap{position:relative;z-index:1}
+.glass .note{border:1px solid rgba(255,255,255,.9);border-left:4px solid var(--amber);border-radius:22px;
+ background:rgba(255,255,255,.26);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);
+ box-shadow:0 20px 54px -30px rgba(2,69,111,.6), inset 0 1px 0 rgba(255,255,255,.75)}
+.glass .note p{color:#3d4f5c}
+.glass .tile{border-radius:22px;border:1px solid rgba(255,255,255,.9);
+ box-shadow:0 20px 54px -30px rgba(2,69,111,.6)}
+.glass .tile:hover{box-shadow:0 26px 64px -28px rgba(2,69,111,.7)}
+.glass .tile .cap{border-bottom-left-radius:21px;border-bottom-right-radius:21px}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.glass .note{background:rgba(255,255,255,.72)}
+}
+/* ---------- frosted captions on the tiles ---------- */
+.glass .tile .cap{
+ background:rgba(8,32,50,.34);
+ -webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+ border-top:1px solid rgba(255,255,255,.3);
+ padding:16px 20px 18px}
+.glass .tile .cap b{text-shadow:0 1px 10px rgba(0,20,35,.5)}
+.glass .tile:hover .cap{background:rgba(8,32,50,.46)}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.glass .tile .cap{background:linear-gradient(180deg,rgba(2,69,111,0),rgba(2,69,111,.9))}
+}
+
+/* ---------- banner holds still while the page scrolls ---------- */
+.pagehead::before{background-attachment:fixed}
+@media (max-width:760px){.pagehead::before{background-attachment:scroll}}
+
+/* ---------- tiles arrive from the side they sit on ---------- */
+html.js .gal>*:nth-child(3n+1){transform:translateX(-42px)}
+html.js .gal>*:nth-child(3n+2){transform:translateY(36px)}
+html.js .gal>*:nth-child(3n+3){transform:translateX(42px)}
+html.js .gal>*.is-in:nth-child(n){transform:none}
+@media (max-width:760px){
+html.js .gal>*:nth-child(n){transform:translateY(32px)}
+html.js .gal>*.is-in:nth-child(n){transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+html.js .gal>*:nth-child(n){transform:none}
+}
+/* ---------- no sideways movement on narrow screens ---------- */
+html{overflow-x:clip}
+@media (max-width:760px){
+html.js .grid2>*:first-child,
+html.js .grid2>*:last-child,
+html.js .ccard,
+html.js .offset .panel,
+html.js .frost,
+html.js .card,
+html.js .quote,
+html.js .sec-head,
+html.js .note,
+html.js .form,
+html.js .ticks{transform:translateY(28px)}
+html.js .grid2>*.is-in,
+html.js .ccard.is-in,
+html.js .offset .panel.is-in,
+html.js .frost.is-in,
+html.js .card.is-in,
+html.js .quote.is-in,
+html.js .sec-head.is-in,
+html.js .note.is-in,
+html.js .form.is-in,
+html.js .ticks.is-in{transform:none}
+}
+.band .btn{box-shadow:0 6px 26px -6px rgba(255,255,255,.45),0 0 0 1px rgba(255,255,255,.18);transition:box-shadow .3s ease}
+.band .btn:hover,.band .btn:focus-visible{box-shadow:0 10px 34px -6px rgba(255,255,255,.6),0 0 0 1px rgba(255,255,255,.35)}
+/* ---------- small screens ---------- */
+@media (max-width:760px){
+.nav{height:70px}
+.mark{width:30px;height:30px;flex:0 0 30px}
+.brand{font-size:18px}
+.sec-head{margin-bottom:34px}
+.btn{padding:14px 26px;font-size:12.5px;letter-spacing:.09em}
+.bcta,.hero-cta{gap:10px}
+.pagehead{padding:56px 0}
+.ticks li{font-size:14.5px}
+.card{padding:26px 22px}
+.ccard{padding:20px 22px}
+}
+@media (max-width:430px){
+.wrap{padding:0 18px}
+.btn{width:100%;justify-content:center;padding:15px 18px}
+.bcta,.hero-cta{width:100%}
+.band p,.sec-head p{font-size:15.5px}
+}
+
+@media (max-width:760px){
+.glass .tile .cap{padding:13px 16px 15px}
+.glass .tile .cap b{font-size:14.5px}
+}
+@media (max-width:760px){.nav-links a::after{display:none}}
+/* tablets: three photos per row, so the captions are made more compact */
+@media (min-width:761px) and (max-width:1000px){
+.glass .tile .cap{padding:9px 14px 11px}
+.glass .tile .cap b{font-size:13.5px;line-height:1.35}
+.glass .tile .cap span{display:block;font-size:10px;line-height:1.5;letter-spacing:.1em}
+}
+</style>
+<script>document.documentElement.className="js";</script>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+    <input class="navtoggle" type="checkbox" id="navtoggle" aria-label="Open menu">
+    <label class="burger" for="navtoggle" title="Menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
+    </label>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="navright">
+      <svg width="16" height="22" viewBox="0 0 16 22" fill="none" aria-hidden="true"><rect x="1" y="1" width="14" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="17.5" r="1.1" fill="currentColor"/></svg>
+      <a class="navphone" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</header>
+
+<div class="pagehead" style="--img:url('images/gallery-banner.jpg')">
+  <span class="ph-blue"></span>
+  <div class="wrap">
+    <span class="label">Gallery</span>
+    <h1>Our work, in pictures.</h1>
+    <p>Placements, arrivals, site visits and the people behind them.</p>
+  </div>
+</div>
+
+<section class="glass">
+  <div class="wrap">
+    <div class="gal">
+      <div class="tile" style="--img:url('images/gallery-1.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p100" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p100)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Harvest crew, first week</b><span>Field crops</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-2.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p101" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p101)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Packing and grading</b><span>Packhouse &amp; processing</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-3.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p102" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p102)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Picked to grade</b><span>Soft fruit</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-4.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p103" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p103)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Machinery operators</b><span>Machinery &amp; supervision</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-5.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p104" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p104)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Induction and briefing</b><span>Before the first shift</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-6.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p105" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p105)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Documents checked</b><span>Compliance</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-7.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p106" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p106)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Interview day</b><span>Screening</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-8.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p107" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p107)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Orchard work</b><span>Harvest</span></div>
+      </div>
+      <div class="tile" style="--img:url('images/gallery-9.jpg')">
+        <svg class="ph" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p108" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="600" height="450" fill="url(#p108)"/><circle cx="420.0" cy="157.5" r="135.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="330.0" cy="315.0" r="99.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+        <div class="cap"><b>Coordination and support</b><span>EcoEarth Ltd</span></div>
+      </div>
+    </div>
+    <div style="margin-top:40px">
+      <div class="note">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:0 0 24px;color:var(--amber);margin-top:3px" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v5.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.15" fill="currentColor"/></svg>
+        <p><strong>About these pictures.</strong> These are stock photographs chosen to show the kinds of work we recruit for. They are not photographs of EcoEarth placements. We will replace them with our own as soon as we have permission from the people in them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band" style="--img:url('images/band-1.jpg')">
+  <div class="wrap">
+    <h2>Let's talk about your next hire.</h2>
+    <p>Whether you are a UK employer with roles to fill or a skilled worker looking for a route to the UK, send us a message and we will come back to you within two working days.</p>
+    <div class="bcta">
+      <a class="btn btn-w" href="contact.html">Contact us</a>
+      <a class="btn btn-wo" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+        <p class="about">International agricultural recruitment. We connect skilled workers worldwide with licensed UK growers, packhouses and food producers.</p>
+      </div>
+      <div><h3>Pages</h3><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul></div>
+      <div><h3>What we cover</h3><ul>
+        <li><a href="services.html">Field Crops &amp; Harvest</a></li>
+        <li><a href="services.html">Soft Fruit &amp; Glasshouse</a></li>
+        <li><a href="services.html">Packhouse &amp; Processing</a></li>
+        <li><a href="services.html">Machinery &amp; Supervision</a></li>
+      </ul></div>
+      <div><h3>Contact</h3><ul>
+        <li><a href="mailto:ecoearth36@gmail.com">ecoearth36@gmail.com</a></li>
+        <li><a href="tel:+447761647777">+44 7761 647777</a></li>
+        <li>33 Elmcroft Avenue<br>London E11 2DU<br>United Kingdom</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 EcoEarth Ltd. Registered in England &amp; Wales, company no. 12247782.</span>
+      <span>Privacy Policy · Terms · Modern Slavery Statement</span>
+    </div>
+  </div>
+</footer>
+<a class="totop" href="#top" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+<script>
+(function(){
+  var d=document.documentElement;
+  if(!('IntersectionObserver' in window)){d.classList.remove('js');return;}
+  var sel='.sec-head,.card,.quote,.ccard,.tile,.cgrid>div,.note,.offset .panel,.frost,.form,.ticks';
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll(sel).forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home — EcoEarth Ltd</title>
+<meta name="description" content="EcoEarth Ltd connects skilled agricultural workers worldwide with licensed UK growers, packhouses and food producers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#202020;
+  --soft:#585F63;
+  --line:#e3e8ee;
+  --bg:#ffffff;
+  --bg2:#f5f8fa;
+  --navy:#02456F;
+  --navy2:#013552;
+  --accent:#0373A5;
+  --accent-d:#035A95;
+  --accent-l:#0498BD;
+  --lime:#C9E260;
+  --grad:linear-gradient(90deg,#035A95 0%,#0498BD 100%);
+  
+  --amber:#e8a33d;
+  --maxw:1180px;
+  --h:'Titillium Web',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --b:'PT Serif',Georgia,'Times New Roman',serif;
+  --shadow:0 1px 2px rgba(19,38,55,.05),0 10px 30px -12px rgba(19,38,55,.18);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--b);font-size:17px;line-height:1.95;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h2,h3,h4{font-family:var(--h);font-weight:700;letter-spacing:-.02em;margin:0;color:var(--ink)}
+h2{font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.16;margin-bottom:20px}
+h3{font-size:1.25rem;font-weight:600;line-height:1.35;margin-bottom:12px}
+.label{display:block;font-family:var(--h);font-size:clamp(15px,1.4vw,19px);font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.lead{font-size:1.05rem;color:var(--soft);margin:0}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--h);font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:16px 34px;border:0;background:var(--grad);color:#fff;cursor:pointer;transition:.18s}
+
+.btn-o{background:transparent;color:var(--accent-d);border:2px solid var(--accent-d);padding:14px 32px}
+
+.btn-w{background:#fff;color:var(--accent-d)}
+
+.btn-wo{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;padding:14px 32px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:#fff;border-bottom:0}
+header::before{content:"";position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);z-index:0}
+.nav{position:relative;z-index:1;display:flex;align-items:center;gap:28px;height:84px;max-width:none;padding:0 0 0 clamp(24px,5vw,100px)}
+.navright{flex:0 0 30.3%;display:flex;align-items:center;gap:18px;padding-left:40px;color:var(--ink)}
+.navphone{font-family:var(--h);font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.navphone:hover{color:var(--accent-d)}
+.bname{position:relative;display:block;line-height:1}
+.bname i{font-style:normal;color:var(--lime)}
+.brand{display:flex;align-items:center;gap:7px;font-family:var(--h);font-weight:700;font-size:21px;color:#fff;letter-spacing:.04em;text-transform:uppercase}
+.brand .ltd{position:absolute;right:-.18em;top:100%;margin-top:2px;font-size:8px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.mark{width:36px;height:36px;flex:0 0 36px}
+.nav-links{display:flex;gap:28px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+/* keep CONTACT exactly 15px clear of the end of the blue bar on wide screens.
+   .303 matches the 30.3% white area; clamp() matches the .nav left padding. */
+@media (min-width:1101px){.nav-links{margin-right:calc(clamp(24px,5vw,100px) * .303 - 13px)}}
+.nav-links a{position:relative;font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:30px 0;border-bottom:0;transition:.16s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:25px;height:3px;background:transparent;transition:background .16s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--lime)}
+.nav-links a:hover::after,.nav-links a[aria-current]::after{background:var(--lime)}
+.navtoggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.burger{display:none;margin-left:auto;align-items:center;background:transparent;border:1px solid rgba(255,255,255,.5);padding:10px 12px;cursor:pointer;color:#fff}
+.navtoggle:focus-visible+.burger{outline:2px solid var(--lime);outline-offset:2px}
+section{padding:92px 0}
+.alt{background:var(--bg2)}
+.sec-head{max-width:720px;margin-bottom:52px}
+.sec-head.mid{margin-left:auto;margin-right:auto;text-align:center}
+.carousel{position:relative;background:#fff;padding-bottom:120px;overflow:hidden}
+.carousel::before{content:"";position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);z-index:0}
+.track{position:relative;z-index:1;display:flex;margin-left:clamp(24px,5vw,100px);transition:transform 1.4s cubic-bezier(.22,.61,.25,1)}
+.slide{position:relative;flex:0 0 100%;min-height:clamp(380px,62vh,620px);max-height:calc(100svh - 84px);display:flex;align-items:center}
+.slide::before{content:"";position:absolute;inset:0;z-index:1;background-image:var(--img);background-size:cover;background-position:center}
+.slide::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(3,90,149,.94) 0%,rgba(4,120,170,.7) 48%,rgba(4,152,189,.25) 100%)}
+.slide .ph{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.slide .cap{position:relative;z-index:3;width:100%;padding:40px 0}
+.slide .cap .label{color:#fff;opacity:.85}
+.slide .cap h2{font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.1;color:#fff;max-width:17em;margin-bottom:22px}
+.slide .cap p{color:rgba(255,255,255,.82);max-width:34em;margin:0 0 28px;font-size:1.02rem}
+.cnav{position:absolute;bottom:44px;z-index:6;width:40px;height:30px;display:grid;place-items:center;cursor:pointer;background:transparent;border:0;color:#fff;transition:.16s;opacity:.95}
+.cnav:hover{color:var(--lime);opacity:1}
+.cprev{left:clamp(24px,5vw,100px)}
+.cnext{left:auto;right:clamp(24px,5vw,100px);color:var(--accent-d)}
+.cnext:hover{color:var(--accent-l)}
+.cdots{position:absolute;bottom:56px;right:34%;z-index:5;display:flex;gap:10px}
+.cdot{width:36px;height:4px;border:0;background:rgba(255,255,255,.35);cursor:pointer;padding:0;transition:.16s}
+.cdot[aria-current="true"]{background:var(--lime)}
+.counters{background:var(--grad);color:#fff;padding:64px 0}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+.cgrid b{display:block;font-family:var(--h);font-size:2.6rem;line-height:1.1;color:#fff;margin-bottom:6px}
+.cgrid span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.card{background:#fff;border:1px solid var(--line);padding:34px 28px;transition:.2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+.card .ic{width:56px;height:56px;display:grid;place-items:center;background:rgba(3,115,165,.1);color:var(--accent);margin-bottom:20px}
+.card p{margin:0;color:var(--soft);font-size:15px}
+.card .num{display:block;font-family:var(--h);font-size:13px;font-weight:600;letter-spacing:.18em;color:var(--accent-l);margin-bottom:14px}
+.quote{background:#fff;border:1px solid var(--line);padding:32px 30px;display:flex;flex-direction:column}
+.quote p{margin:0 0 20px;color:var(--ink);font-size:16px;line-height:1.75}
+.quote .who{display:flex;align-items:center;gap:13px;margin-top:auto}
+.quote .av{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--h);font-weight:700;color:#fff}
+.quote .who b{display:block;font-family:var(--h);font-size:14px}
+.quote .who span{font-size:13px;color:var(--soft)}
+.quote .who .av{font-size:17px;color:#fff;flex:none}
+.quote .who>div{line-height:1.35}
+.quote .who b{margin-bottom:3px}
+/* the three name rows always line up, even when one quote or name is longer */
+@supports (grid-template-rows:subgrid){
+.quotes>.quote{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+.quotes>.quote .who{margin-top:0}
+}
+.note{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);padding:24px 26px}
+.note p{margin:0;color:var(--soft);font-size:15px}
+.note strong{color:var(--ink)}
+/* note box: same rounded, lifted style as the Gallery note on every page */
+.note{border-radius:22px;border:1px solid #e1ecf3;border-left:4px solid var(--amber);
+ background:linear-gradient(135deg,#f8fbfd 0%,#eef5fa 100%);
+ box-shadow:0 20px 54px -30px rgba(2,69,111,.6), inset 0 1px 0 rgba(255,255,255,.75)}
+.note p{color:#3d4f5c}
+.glass .note{border:1px solid rgba(255,255,255,.9);border-left:4px solid var(--amber);
+ background:rgba(255,255,255,.26);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5)}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.glass .note{background:rgba(255,255,255,.72)}
+}
+.band{position:relative;overflow:hidden;color:#fff;text-align:center;padding:clamp(86px,11vw,140px) 0;background-image:var(--img);background-size:cover;background-position:center;background-attachment:fixed;background-color:#06385C}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,87,139,.9) 0%,rgba(14,138,176,.84) 100%)}
+.band .wrap{position:relative;z-index:1}
+@media (max-width:760px){.band{background-attachment:scroll}}
+.band h2{color:#fff}
+.band p{color:rgba(255,255,255,.78);max-width:46em;margin:0 auto 30px}
+.bcta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+footer{background:var(--navy2);color:rgba(255,255,255,.72);padding:72px 0 30px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:44px}
+footer h3{font-family:var(--h);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:11px}
+footer a{color:rgba(255,255,255,.72)}
+footer a:hover{color:var(--lime)}
+footer .brand{color:#fff}
+footer .brand .ltd{color:rgba(255,255,255,.55)}
+footer .about{margin:18px 0 0;max-width:30em;color:rgba(255,255,255,.6)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5)}
+@media (max-width:1000px){
+.grid4{grid-template-columns:repeat(2,1fr)}
+.f-grid{grid-template-columns:1fr 1fr}
+.grid2{grid-template-columns:1fr;gap:30px}
+}
+@media (max-width:760px){
+.nav-links,.nav>.btn{display:none}
+.burger{display:flex}
+.navtoggle:checked~.nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--accent-d);padding:6px 24px 18px}
+.navtoggle:checked~.nav-links li a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+section{padding:64px 0}
+.band{padding:64px 0}
+.grid4,.grid3,.cgrid{grid-template-columns:1fr}
+.cgrid{gap:34px}
+.f-grid{grid-template-columns:1fr}
+.cnav{width:38px;height:38px}
+.cprev{left:8px}
+.cnext{right:8px}
+.slide .cap{padding:30px 0}
+}
+@media (max-width:1100px){
+header::before{right:0}
+.navright{display:none}
+.nav{padding:0 24px}
+}
+
+@media (max-width:1100px){
+.carousel::before{right:0}
+.carousel{padding-bottom:0}
+.track{margin-left:0}
+.cnav{top:50%;bottom:auto;transform:translateY(-50%);width:44px;height:44px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35)}
+.cprev{left:10px}
+.cnext{left:auto;right:10px;color:#fff}
+.cdots{right:auto;left:50%;transform:translateX(-50%);bottom:22px}
+}
+.totop{position:fixed;right:0;bottom:0;z-index:50;width:70px;height:70px;display:grid;place-items:center;background:var(--grad);color:#fff;transition:.18s}
+.totop:hover{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+@media (max-width:760px){.totop{width:54px;height:54px}}
+.btn{position:relative;overflow:hidden;z-index:0;isolation:isolate}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:-12%;width:124%;background:linear-gradient(90deg,#0498BD 0%,#035A95 100%);transform:translateX(112%);transition:transform 2.2s cubic-bezier(.12,1.3,.24,1);z-index:-1}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleY(1)}
+.btn-o::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-o:hover,.btn-o:focus-visible{color:#fff;border-color:#0498BD}
+.btn-w::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-w:hover,.btn-w:focus-visible{color:#fff}
+.btn-wo::before{background:#fff}
+.btn-wo:hover,.btn-wo:focus-visible{color:var(--accent-d);border-color:#fff}
+@media (prefers-reduced-motion:reduce){.btn::before{transition:none}
+.track{transition:none}}
+/* ---------- offset photo + blue panel ---------- */
+.offset{position:relative;z-index:2;margin-top:-30px;padding:0 0 40px}
+.offset .photo{position:relative;margin-left:26%;min-height:clamp(380px,46vw,620px);background-color:#0b3d61}
+.offset .photo::before{content:"";position:absolute;inset:0;z-index:1;background-image:var(--img);background-size:cover;background-position:center}
+.offset .photo .ph{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.offset .photo::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(2,43,71,0) 38%,rgba(2,43,71,.58) 100%)}
+.offset .panel{position:absolute;left:clamp(24px,5vw,100px);top:clamp(24px,5vw,72px);bottom:auto;width:min(calc(45% - 40px),626px);color:#fff;padding:clamp(26px,3vw,40px) clamp(22px,2.6vw,36px);z-index:3;background:linear-gradient(120deg,rgba(3,90,149,.62) 0%,rgba(4,152,189,.52) 100%);-webkit-backdrop-filter:blur(18px) saturate(1.25);backdrop-filter:blur(18px) saturate(1.25);border:1px solid rgba(255,255,255,.3);border-radius:20px;box-shadow:0 18px 50px -24px rgba(0,0,0,.6)}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.offset .panel{background:var(--grad)}
+}
+.offset .panel h2{color:#fff;margin:0;font-weight:300;font-size:calc(clamp(1.15rem,2vw,1.7rem) * 1.2);line-height:1.34;letter-spacing:0}
+@media (max-width:1040px){
+.offset .photo{margin-left:10%;min-height:clamp(420px,52vw,560px)}
+.offset .panel{width:min(60%,504px);padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px)}
+.offset .panel h2{font-size:calc(clamp(1.1rem,2.4vw,1.5rem) * 1.2)}
+}
+@media (max-width:780px){
+.offset{margin-top:-26px;padding-bottom:0}
+.offset .photo{margin-left:0;min-height:clamp(240px,52vw,320px)}
+.offset .photo::after{background:linear-gradient(180deg,rgba(2,43,71,0) 55%,rgba(2,43,71,.35) 100%)}
+.offset .panel{position:static;width:100%;left:auto;bottom:auto;
+ border-radius:0;border-left:0;border-right:0;border-top:0;
+ background:var(--grad);-webkit-backdrop-filter:none;backdrop-filter:none;
+ padding:34px 24px 0}
+.offset .panel h2{font-size:calc(clamp(1.2rem,5vw,1.55rem) * 1.2);line-height:1.32}
+}
+
+/* ---------- parallax quote ---------- */
+.parallax{position:relative;background-image:var(--img);background-size:cover;background-position:center;background-attachment:fixed;background-color:#0b3d61;padding:clamp(90px,13vw,170px) 0;overflow:hidden}
+.parallax::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,87,139,.88) 0%,rgba(14,138,176,.82) 100%)}
+.parallax .wrap{position:relative;z-index:1}
+.parallax .qm{display:inline-block;font-family:var(--h);font-size:clamp(3rem,6vw,5rem);line-height:.6;color:var(--lime);vertical-align:-.15em;margin-right:14px}
+.parallax h2{display:inline;color:#fff;font-size:clamp(1.7rem,4vw,3.2rem);line-height:1.25}
+.parallax h2 .hl{color:var(--lime)}
+.parallax .who{margin:34px 0 0;text-align:right;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+@media (max-width:760px){.parallax{background-attachment:scroll}.parallax .who{text-align:left}}
+/* ---------- frosted glass stats ---------- */
+.frost{position:absolute;right:clamp(16px,3vw,56px);bottom:calc(clamp(16px,3vw,48px) + 20px);z-index:4;
+  display:flex;align-items:center;gap:clamp(18px,3vw,44px);
+  padding:clamp(20px,2.6vw,34px) clamp(24px,3.4vw,46px);
+  background:rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(18px) saturate(1.25);
+  backdrop-filter:blur(18px) saturate(1.25);
+  border:1px solid rgba(255,255,255,.35);border-radius:20px;color:#fff;
+  box-shadow:0 18px 50px -24px rgba(0,0,0,.6)}
+.frost .st{text-align:left}
+.frost .st+.st{border-left:1px solid rgba(255,255,255,.32);padding-left:clamp(18px,3vw,44px)}
+.frost b{display:block;font-family:var(--h);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.7rem);line-height:1.1;margin-bottom:4px}
+.frost span{font-size:clamp(14px,1.3vw,17px);color:rgba(255,255,255,.9)}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.frost{background:rgba(2,56,92,.78)}
+}
+@media (max-width:1040px){
+.frost{right:clamp(14px,2.5vw,28px);top:auto;bottom:calc(clamp(14px,2.5vw,28px) + 16px);
+ gap:clamp(14px,2.4vw,26px);padding:clamp(16px,2.2vw,24px) clamp(18px,2.6vw,28px)}
+.frost b{font-size:clamp(1.4rem,2.6vw,2rem)}
+.frost span{font-size:13px}
+}
+@media (max-width:780px){
+.frost{position:static;transform:none;margin:0;width:100%;
+ justify-content:space-between;gap:14px;border-radius:0;border:0;
+ padding:26px 24px 34px;background:var(--grad);
+ -webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+.frost .st{flex:1;margin:0;padding:20px 10px;text-align:center;
+ border-radius:16px;border:1px solid rgba(255,255,255,.4);
+ background:linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.18));
+ -webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.frost .st+.st{border-left:1px solid rgba(255,255,255,.4);padding-left:10px}
+.frost b{font-size:clamp(1.3rem,5.6vw,1.8rem)}
+.frost span{font-size:12.5px}
+}
+/* ---------- glass sections ---------- */
+.glass{position:relative;overflow:hidden;background:#eef5fa}
+.glass::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(560px 360px at 14% 12%, rgba(3,115,165,.26), transparent 62%),
+ radial-gradient(460px 320px at 82% 86%, rgba(201,226,96,.34), transparent 64%),
+ radial-gradient(400px 300px at 60% 20%, rgba(4,152,189,.2), transparent 60%)}
+.glass.flip::before{
+ background:radial-gradient(560px 360px at 86% 14%, rgba(3,115,165,.24), transparent 62%),
+ radial-gradient(460px 320px at 12% 84%, rgba(201,226,96,.3), transparent 64%),
+ radial-gradient(400px 300px at 40% 36%, rgba(4,152,189,.18), transparent 60%)}
+.glass .wrap{position:relative;z-index:1}
+.glass .card,.glass .quote,.glass .ccard{position:relative;border:1px solid rgba(255,255,255,.9);border-radius:22px;
+ background:rgba(255,255,255,.26);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);
+ box-shadow:0 20px 54px -30px rgba(2,69,111,.6), inset 0 1px 0 rgba(255,255,255,.75)}
+.glass .card:hover,.glass .quote:hover{transform:translateY(-4px);background:rgba(255,255,255,.4);border-color:#fff;
+ box-shadow:0 26px 64px -28px rgba(2,69,111,.65), inset 0 1px 0 rgba(255,255,255,.9)}
+.glass .card .num{color:var(--accent-d)}
+.glass .card p,.glass .quote p,.glass .ccard p{color:#3d4f5c}
+.glass .card .ic{background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.8);border-radius:14px}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.glass .card,.glass .quote,.glass .ccard{background:rgba(255,255,255,.72)}
+}
+/* ---------- menu hover ---------- */
+.nav-links a{display:inline-block;transform-origin:center;will-change:transform}
+.nav-links a:hover,.nav-links a:focus-visible{animation:navwob .5s cubic-bezier(.3,.8,.4,1) forwards}
+@keyframes navwob{
+0%{transform:scale(1) rotate(0deg)}
+30%{transform:scale(1.14) rotate(-2.2deg)}
+55%{transform:scale(1.14) rotate(2.2deg)}
+78%{transform:scale(1.1) rotate(-1deg)}
+100%{transform:scale(1.09) rotate(0deg)}
+}
+
+/* ---------- reveal on scroll ---------- */
+html.js .sec-head,
+html.js .card,
+html.js .quote,
+html.js .ccard,
+html.js .tile,
+html.js .cgrid>div,
+html.js .note,
+html.js .offset .panel,
+html.js .frost,
+html.js .form,
+html.js .ticks{
+opacity:0;transform:translateY(30px);
+transition:opacity .72s cubic-bezier(.2,.7,.3,1),transform .72s cubic-bezier(.2,.7,.3,1)}
+html.js .grid2>*:first-child{transform:translateX(-38px)}
+html.js .grid2>*:last-child{transform:translateX(38px)}
+html.js .offset .panel{transform:translateX(-38px)}
+html.js .frost{transform:translateX(38px)}
+html.js .is-in.is-in.is-in{opacity:1;transform:none}
+html.js .grid4>*:nth-child(2),html.js .grid3>*:nth-child(2),html.js .gal>*:nth-child(2),html.js .cgrid>*:nth-child(2){transition-delay:.09s}
+html.js .grid4>*:nth-child(3),html.js .grid3>*:nth-child(3),html.js .gal>*:nth-child(3),html.js .cgrid>*:nth-child(3){transition-delay:.18s}
+html.js .grid4>*:nth-child(4),html.js .gal>*:nth-child(4),html.js .cgrid>*:nth-child(4){transition-delay:.27s}
+html.js .grid3>*:nth-child(4),html.js .gal>*:nth-child(5){transition-delay:.27s}
+html.js .gal>*:nth-child(6){transition-delay:.36s}
+html.js .gal>*:nth-child(7){transition-delay:.45s}
+html.js .gal>*:nth-child(8){transition-delay:.54s}
+html.js .gal>*:nth-child(9){transition-delay:.63s}
+@media (prefers-reduced-motion:reduce){
+html.js .sec-head,html.js .card,html.js .quote,html.js .ccard,html.js .tile,html.js .cgrid>div,
+html.js .note,html.js .offset .panel,html.js .frost,html.js .form,html.js .ticks,
+html.js .grid2>*:first-child,html.js .grid2>*:last-child{opacity:1;transform:none;transition:none}
+.nav-links a:hover,.nav-links a:focus-visible{animation:none}
+}
+/* ---------- no sideways movement on narrow screens ---------- */
+html{overflow-x:clip}
+@media (max-width:1000px){
+html.js .grid2>*:first-child,
+html.js .grid2>*:last-child{transform:translateY(28px)}
+}
+@media (max-width:760px){
+html.js .grid2>*:first-child,
+html.js .grid2>*:last-child,
+html.js .ccard,
+html.js .offset .panel,
+html.js .frost,
+html.js .card,
+html.js .quote,
+html.js .sec-head,
+html.js .note,
+html.js .form,
+html.js .ticks{transform:translateY(28px)}
+html.js .grid2>*.is-in,
+html.js .ccard.is-in,
+html.js .offset .panel.is-in,
+html.js .frost.is-in,
+html.js .card.is-in,
+html.js .quote.is-in,
+html.js .sec-head.is-in,
+html.js .note.is-in,
+html.js .form.is-in,
+html.js .ticks.is-in{transform:none}
+}
+.band .btn{box-shadow:0 6px 26px -6px rgba(255,255,255,.45),0 0 0 1px rgba(255,255,255,.18);transition:box-shadow .3s ease}
+.band .btn:hover,.band .btn:focus-visible{box-shadow:0 10px 34px -6px rgba(255,255,255,.6),0 0 0 1px rgba(255,255,255,.35)}
+/* ---------- small screens ---------- */
+@media (max-width:760px){
+.nav{height:70px}
+.mark{width:30px;height:30px;flex:0 0 30px}
+.brand{font-size:18px}
+.sec-head{margin-bottom:34px}
+.btn{padding:14px 26px;font-size:12.5px;letter-spacing:.09em}
+.bcta,.hero-cta{gap:10px}
+.pagehead{padding:56px 0}
+.ticks li{font-size:14.5px}
+.card{padding:26px 22px}
+.ccard{padding:20px 22px}
+}
+@media (max-width:430px){
+.wrap{padding:0 18px}
+.btn{width:100%;justify-content:center;padding:15px 18px}
+.bcta,.hero-cta{width:100%}
+.band p,.sec-head p{font-size:15.5px}
+}
+
+@media (max-width:760px){
+.slide{min-height:clamp(330px,78vw,440px)}
+.slide .cap h2{font-size:clamp(1.45rem,6.6vw,2rem);margin-bottom:16px}
+.slide .cap p{font-size:15px;margin-bottom:18px}
+.parallax h2{font-size:clamp(1.45rem,6.4vw,2rem)}
+.parallax .qm{font-size:clamp(2.2rem,9vw,3.2rem);margin-right:10px}
+.cdots{bottom:16px}
+}
+/* ---------- carousel controls: pointer only ---------- */
+@media (max-width:900px){.cnav{display:none}}
+@media (hover:none){.cnav{display:none}}
+.track{touch-action:pan-y}
+@media (max-width:760px){.nav-links a::after{display:none}}
+</style>
+<script>document.documentElement.className="js";</script>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+    <input class="navtoggle" type="checkbox" id="navtoggle" aria-label="Open menu">
+    <label class="burger" for="navtoggle" title="Menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
+    </label>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="navright">
+      <svg width="16" height="22" viewBox="0 0 16 22" fill="none" aria-hidden="true"><rect x="1" y="1" width="14" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="17.5" r="1.1" fill="currentColor"/></svg>
+      <a class="navphone" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</header>
+<div class="carousel" id="carousel" aria-label="What we recruit for">
+  <div class="track" id="track">
+    <div class="slide" style="--img:url('images/carousel-0.jpg')">
+      <svg class="ph" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="600" fill="url(#p0)"/></svg>
+      <div class="cap"><div class="wrap"><span class="label">Field Crops &amp; Harvest</span><h2>People who know the crop they are picking</h2><p>Experienced harvest workers who have run a full season before, introduced to UK growers who hold a valid sponsor licence.</p><a class="btn" href="services.html">How we work</a></div></div>
+    </div>
+    <div class="slide" style="--img:url('images/carousel-1.jpg')">
+      <svg class="ph" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="600" fill="url(#p1)"/><circle cx="840.0" cy="210.0" r="180.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="660.0" cy="420.0" r="132.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+      <div class="cap"><div class="wrap"><span class="label">Field Crops &amp; Harvest</span><h2>Harvest crews, ready when the season is</h2><p>Experienced pickers, cutters and field supervisors who have worked a full harvest before and know the pace it demands.</p><a class="btn" href="services.html">How we work</a></div></div>
+    </div>
+    <div class="slide" style="--img:url('images/carousel-2.jpg')">
+      <svg class="ph" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="600" fill="url(#p2)"/><circle cx="840.0" cy="210.0" r="180.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="660.0" cy="420.0" r="132.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+      <div class="cap"><div class="wrap"><span class="label">Soft Fruit &amp; Glasshouse</span><h2>Soft fruit, picked to grade</h2><p>Strawberry, berry and salad pickers with the hands and the judgement to pick fast without bruising the crop.</p><a class="btn" href="services.html">How we work</a></div></div>
+    </div>
+    <div class="slide" style="--img:url('images/carousel-3.jpg')">
+      <svg class="ph" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="600" fill="url(#p3)"/><circle cx="840.0" cy="210.0" r="180.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="660.0" cy="420.0" r="132.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+      <div class="cap"><div class="wrap"><span class="label">Machinery &amp; Supervision</span><h2>Operators who can run the kit</h2><p>Tractor and combine operators, irrigation technicians and farm team leaders with verified tickets and real hours behind them.</p><a class="btn" href="services.html">How we work</a></div></div>
+    </div>
+    <div class="slide" style="--img:url('images/carousel-4.jpg')">
+      <svg class="ph" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="p4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="600" fill="url(#p4)"/><circle cx="840.0" cy="210.0" r="180.0" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="660.0" cy="420.0" r="132.0" fill="none" stroke="rgba(3,115,165,.25)" stroke-width="2"/></svg>
+      <div class="cap"><div class="wrap"><span class="label">Plantation &amp; Packhouse</span><h2>From the branch to the box</h2><p>Plantation pickers, graders and packhouse operatives for growers, cold stores and food production sites across the UK.</p><a class="btn" href="services.html">How we work</a></div></div>
+    </div>
+  </div>
+  <button class="cnav cprev" id="cprev" aria-label="Previous"><svg width="30" height="12" viewBox="0 0 42 14" fill="none" aria-hidden="true"><path d="M41 7H1M8 1L1 7l7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="cnav cnext" id="cnext" aria-label="Next"><svg width="30" height="12" viewBox="0 0 42 14" fill="none" aria-hidden="true"><path d="M1 7h40M34 1l7 6-7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="cdots">
+    <button class="cdot" data-go="0" aria-label="Slide 1" aria-current="true"></button>
+    <button class="cdot" data-go="1" aria-label="Slide 2"></button>
+    <button class="cdot" data-go="2" aria-label="Slide 3"></button>
+    <button class="cdot" data-go="3" aria-label="Slide 4"></button>
+    <button class="cdot" data-go="4" aria-label="Slide 5"></button>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="label">How we are different</span>
+    <div class="grid2" style="align-items:start">
+      <h1 style="margin:0">Helping UK growers find skilled hands, and skilled hands find honest work.</h1>
+      <div>
+        <p class="lead">EcoEarth Ltd connects experienced agricultural workers from around the world with UK growers, packhouses and food producers that hold a valid sponsor licence. We handle the sourcing, the screening and the paperwork, so both sides start on solid ground.</p>
+        <p class="lead" style="margin-top:22px">Most of the people we place have spent years in the fields and are completely new to the UK system. Most of the growers we work with know their crop inside out and have never hired from overseas before. The gap between those two positions is where we do our work.</p>
+        <div style="margin-top:32px"><a class="btn" href="about.html">More about us</a></div>
+      </div>
+    </div>
+    <div style="margin-top:56px"><div class="note">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex:0 0 24px;color:var(--amber);margin-top:3px" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5v5.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="16.4" r="1.15" fill="currentColor"/></svg>
+      <p><strong>How we operate.</strong> EcoEarth Ltd is a recruitment agency. We do not sponsor visas ourselves — we connect skilled workers with UK employers who hold a valid Home Office sponsor licence, and that employer issues the Certificate of Sponsorship. We will always tell you clearly who your employer would be before you commit to anything.</p>
+    </div></div>
+  </div>
+</section>
+
+
+<section class="glass alt">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="label">What we recruit for</span>
+      <h2>Four kinds of agricultural work.</h2>
+      <p class="lead">We do one industry properly rather than four badly. Everything below sits inside agriculture and food production.</p>
+    </div>
+    <div class="grid4">
+      <div class="card"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 20V9m4 11V6m4 14V9m4 11V12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 9l1.6-2.4L6 4m4 2l1.6-2.4L10 1.2m4 7.8l1.6-2.4L14 4m4 8l1.6-2.4L18 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Field Crops &amp; Harvest</h3><p>Harvest operatives, pickers, cutters and field supervisors for arable, vegetable and orchard growers through the whole season.</p></div>
+      <div class="card"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 21h18M8 21V12m8 9v-9M12 21v-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><h3>Soft Fruit &amp; Glasshouse</h3><p>Strawberry, berry, tomato and salad pickers, plus propagation and glasshouse staff who know how to handle delicate crops to grade.</p></div>
+      <div class="card"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M9 8V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Packhouse &amp; Processing</h3><p>Graders, packers, line operatives, butchers and quality staff for packhouses, cold stores and food production sites.</p></div>
+      <div class="card"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="17" r="3.4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="18" r="2.4" stroke="currentColor" stroke-width="1.7"/><path d="M7 13.6V8h5l2 5.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8h4l1.5 7.6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><h3>Machinery &amp; Supervision</h3><p>Tractor and combine operators, irrigation technicians, forklift drivers and farm team leaders with verified tickets and experience.</p></div>
+    </div>
+    <div style="margin-top:34px;text-align:center"><a class="btn" href="services.html">See how we work</a></div>
+  </div>
+</section>
+
+<div class="offset">
+  <div class="photo" style="--img:url('images/offset-1.jpg')">
+    <svg class="ph" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="po" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#024872"/><stop offset="100%" stop-color="#013552"/></linearGradient></defs><rect width="1200" height="760" fill="url(#po)"/><circle cx="820" cy="280" r="190" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/><circle cx="640" cy="520" r="120" fill="none" stroke="rgba(201,226,96,.3)" stroke-width="2"/><circle cx="980" cy="600" r="150" fill="rgba(201,226,96,.16)"/><circle cx="1080" cy="420" r="90" fill="rgba(255,255,255,.1)"/><path d="M0 640 L1200 430" stroke="rgba(255,255,255,.12)" stroke-width="40"/></svg>
+  </div>
+  <div class="panel">
+    <h2>With our specialists at your disposal, you will face a full season of overseas hiring with confidence</h2>
+  </div>
+  <div class="frost">
+      <div class="st"><b>Worldwide</b><span>Candidate sourcing</span></div>
+      <div class="st"><b>2019</b><span>Trading since</span></div>
+    </div>
+
+</div>
+
+<section class="glass flip">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="label">The process</span>
+      <h2>A clear process, from first call to first day.</h2>
+      <p class="lead">Recruiting across borders has a lot of moving parts. We keep it to three stages so everyone knows where they stand.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="num">STAGE 01</span><h3>Understand the role</h3><p>We map the job, the skills required, the shift pattern and the salary band, and confirm the role fits an eligible occupation code.</p></div>
+      <div class="card"><span class="num">STAGE 02</span><h3>Source and screen</h3><p>We search our worldwide network, verify qualifications and references, assess English, and shortlist only those who genuinely match.</p></div>
+      <div class="card"><span class="num">STAGE 03</span><h3>Onboard and settle</h3><p>We support both sides through documentation, travel and arrival, then stay in touch through the first months.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="parallax" style="--img:url('images/parallax-1.jpg')">
+  <div class="wrap">
+    <span class="qm">&rdquo;</span>
+    <h2>Hire the hands, not the paperwork. <span class="hl">We handle the rest.</span></h2>
+    <p class="who">EcoEarth Ltd &mdash; London</p>
+  </div>
+</div>
+
+<section class="glass alt">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="label">What people say</span>
+      <h2>In their words.</h2>
+    </div>
+    <div class="grid3 quotes">
+      <div class="quote">
+        <p>The farm managers were fair and patient with us. On the first day they showed us the work step by step, and the weekly schedule was always ready in good time.</p>
+      <div class="who"><span class="av">U</span><div><b>Utkuriy Samarqandiy</b><span>Staples Farm, UK</span>
+    </div>
+  </div>
+  </div>
+      <div class="quote">
+        <p>The office arranged my work agreement with the farm and went through every part of it with me before I signed. When I had a question about my hours, they answered the same day.</p>
+        <div class="who"><span class="av">A</span><div><b>Amir Buhoriy</b><span>Shadwell, Farm</span></div></div></div>
+      <div class="quote">
+        <p>I was nervous about working in a new country. The office kept in touch during my first weeks, and the farm team made us feel welcome. I am glad I came.</p>
+        <div class="who"><span class="av">M</span><div><b>Mansurhon Quqondiy</b><span>Somewhere in UK, Farm</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" style="--img:url('images/band-1.jpg')">
+  <div class="wrap">
+    <h2>Let's talk about your next hire.</h2>
+    <p>Whether you are a UK employer with roles to fill or a skilled worker looking for a route to the UK, send us a message and we will come back to you within two working days.</p>
+    <div class="bcta">
+      <a class="btn btn-w" href="contact.html">Contact us</a>
+      <a class="btn btn-wo" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+        <p class="about">International agricultural recruitment. We connect skilled workers worldwide with licensed UK growers, packhouses and food producers.</p>
+      </div>
+      <div><h3>Pages</h3><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul></div>
+      <div><h3>What we cover</h3><ul>
+        <li><a href="services.html">Field Crops &amp; Harvest</a></li>
+        <li><a href="services.html">Soft Fruit &amp; Glasshouse</a></li>
+        <li><a href="services.html">Packhouse &amp; Processing</a></li>
+        <li><a href="services.html">Machinery &amp; Supervision</a></li>
+      </ul></div>
+      <div><h3>Contact</h3><ul>
+        <li><a href="mailto:ecoearth36@gmail.com">ecoearth36@gmail.com</a></li>
+        <li><a href="tel:+447761647777">+44 7761 647777</a></li>
+        <li>33 Elmcroft Avenue<br>London E11 2DU<br>United Kingdom</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 EcoEarth Ltd. Registered in England &amp; Wales, company no. 12247782.</span>
+      <span>Privacy Policy · Terms · Modern Slavery Statement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var track=document.getElementById('track'), car=document.getElementById('carousel');
+  if(!track||!car)return;
+  var real=track.children.length, i=0, timer=null, moving=false;
+  var dots=[].slice.call(document.querySelectorAll('.cdot'));
+
+  // a copy of the first slide sits after the last one, so the loop never rewinds
+  var clone=track.children[0].cloneNode(true);
+  clone.setAttribute('aria-hidden','true');
+  var ph=clone.querySelector('.ph'); if(ph)ph.remove();
+  track.appendChild(clone);
+
+  function place(k,animate){
+    track.style.transition = animate ? '' : 'none';
+    track.style.transform  = 'translateX('+(-k*100)+'%)';
+    if(!animate) track.offsetHeight;   // force the jump to land before anything animates
+  }
+  function marks(){
+    var at=i%real;
+    dots.forEach(function(d,j){ d.setAttribute('aria-current', j===at?'true':'false'); });
+  }
+  function go(k){
+    if(k<0){                 // stepping back from the first slide
+      place(real,false); i=real-1;
+    } else { i=k; }
+    place(i,true); marks();
+  }
+  track.addEventListener('transitionend',function(e){
+    if(e.propertyName!=='transform')return;
+    if(i===real){ i=0; place(0,false); marks(); }
+    moving=false;
+  });
+
+  function next(){ if(!moving){ moving=true; go(i+1); } }
+  function prev(){ if(!moving){ moving=true; go(i-1); } }
+  function start(){ if(!matchMedia('(prefers-reduced-motion: reduce)').matches) timer=setInterval(next,4000); }
+  function stop(){ clearInterval(timer); }
+
+  document.getElementById('cprev').onclick=function(){stop();prev();start();};
+  document.getElementById('cnext').onclick=function(){stop();next();start();};
+  dots.forEach(function(d){ d.onclick=function(){stop();moving=true;go(+d.dataset.go);start();}; });
+  car.addEventListener('mouseenter',stop); car.addEventListener('mouseleave',start);
+
+  var x0=null;
+  car.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; stop(); },{passive:true});
+  car.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>45){ dx<0 ? next() : prev(); }
+    start();
+  },{passive:true});
+
+  start();
+})();
+</script>
+<a class="totop" href="#top" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+<script>
+(function(){
+  var d=document.documentElement;
+  if(!('IntersectionObserver' in window)){d.classList.remove('js');return;}
+  var sel='.sec-head,.card,.quote,.ccard,.tile,.cgrid>div,.grid2>*,.note,.offset .panel,.frost,.form,.ticks';
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll(sel).forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>

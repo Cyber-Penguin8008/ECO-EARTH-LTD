@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you — EcoEarth Ltd</title>
+<meta name="description" content="EcoEarth Ltd connects skilled agricultural workers worldwide with licensed UK growers, packhouses and food producers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#202020;
+  --soft:#585F63;
+  --line:#e3e8ee;
+  --bg:#ffffff;
+  --bg2:#f5f8fa;
+  --navy:#02456F;
+  --navy2:#013552;
+  --accent:#0373A5;
+  --accent-d:#035A95;
+  --accent-l:#0498BD;
+  --lime:#C9E260;
+  --grad:linear-gradient(90deg,#035A95 0%,#0498BD 100%);
+  
+  --amber:#e8a33d;
+  --maxw:1180px;
+  --h:'Titillium Web',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --b:'PT Serif',Georgia,'Times New Roman',serif;
+  --shadow:0 1px 2px rgba(19,38,55,.05),0 10px 30px -12px rgba(19,38,55,.18);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--b);font-size:17px;line-height:1.95;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h4{font-family:var(--h);font-weight:700;letter-spacing:-.02em;margin:0;color:var(--ink)}
+h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.12}
+h2{font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.16;margin-bottom:20px}
+.label{display:block;font-family:var(--h);font-size:clamp(15px,1.4vw,19px);font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--h);font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:16px 34px;border:0;background:var(--grad);color:#fff;cursor:pointer;transition:.18s}
+
+.btn-w{background:#fff;color:var(--accent-d)}
+
+.btn-wo{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;padding:14px 32px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:#fff;border-bottom:0}
+header::before{content:"";position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);z-index:0}
+.nav{position:relative;z-index:1;display:flex;align-items:center;gap:28px;height:84px;max-width:none;padding:0 0 0 clamp(24px,5vw,100px)}
+.navright{flex:0 0 30.3%;display:flex;align-items:center;gap:18px;padding-left:40px;color:var(--ink)}
+.navphone{font-family:var(--h);font-weight:700;font-size:15px;color:var(--ink);white-space:nowrap}
+.navphone:hover{color:var(--accent-d)}
+.bname{position:relative;display:block;line-height:1}
+.bname i{font-style:normal;color:var(--lime)}
+.brand{display:flex;align-items:center;gap:7px;font-family:var(--h);font-weight:700;font-size:21px;color:#fff;letter-spacing:.04em;text-transform:uppercase}
+.brand .ltd{position:absolute;right:-.18em;top:100%;margin-top:2px;font-size:8px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+.mark{width:36px;height:36px;flex:0 0 36px}
+.nav-links{display:flex;gap:28px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+/* keep CONTACT exactly 15px clear of the end of the blue bar on wide screens.
+   .303 matches the 30.3% white area; clamp() matches the .nav left padding. */
+@media (min-width:1101px){.nav-links{margin-right:calc(clamp(24px,5vw,100px) * .303 - 13px)}}
+.nav-links a{position:relative;font-family:var(--h);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:30px 0;border-bottom:0;transition:.16s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:25px;height:3px;background:transparent;transition:background .16s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--lime)}
+.nav-links a:hover::after,.nav-links a[aria-current]::after{background:var(--lime)}
+.navtoggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.burger{display:none;margin-left:auto;align-items:center;background:transparent;border:1px solid rgba(255,255,255,.5);padding:10px 12px;cursor:pointer;color:#fff}
+.navtoggle:focus-visible+.burger{outline:2px solid var(--lime);outline-offset:2px}
+section{padding:92px 0}
+.alt{background:var(--bg2)}
+.pagehead{position:relative;background:#06385C;padding:84px 0;overflow:hidden}
+.ph-blue{position:absolute;left:0;right:30.3%;top:0;bottom:0;background:var(--grad);opacity:.8;z-index:1}
+.pagehead::before{content:"";position:absolute;inset:0;background-image:var(--img);background-size:cover;background-position:center;opacity:.5;z-index:0}
+.pagehead .wrap{position:relative;z-index:2}
+.pagehead .wrap{max-width:none;padding-left:clamp(24px,5vw,100px);padding-right:34%}
+.pagehead h1{color:#fff;margin-bottom:14px}
+.pagehead .label{color:#fff;opacity:.8}
+.pagehead p{color:rgba(255,255,255,.8);max-width:40em;margin:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.note{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);padding:24px 26px}
+.note p{margin:0;color:var(--soft);font-size:15px}
+.note strong{color:var(--ink)}
+.form{display:grid;gap:18px}
+.field label{display:block;font-family:var(--h);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--b);font-size:15px;padding:14px 15px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.field textarea{min-height:150px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(3,115,165,.14)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.formnote{font-size:13px;color:var(--soft)}
+.ccard{border:1px solid var(--line);padding:24px 26px;background:#fff;margin-bottom:16px}
+.ccard h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ccard p{margin:0;color:var(--soft);font-size:15px}
+.band{position:relative;overflow:hidden;color:#fff;text-align:center;padding:clamp(86px,11vw,140px) 0;background-image:var(--img);background-size:cover;background-position:center;background-attachment:fixed;background-color:#06385C}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,87,139,.9) 0%,rgba(14,138,176,.84) 100%)}
+.band .wrap{position:relative;z-index:1}
+@media (max-width:760px){.band{background-attachment:scroll}}
+.band h2{color:#fff}
+.band p{color:rgba(255,255,255,.78);max-width:46em;margin:0 auto 30px}
+.bcta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+footer{background:var(--navy2);color:rgba(255,255,255,.72);padding:72px 0 30px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:44px}
+footer h3{font-family:var(--h);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:11px}
+footer a{color:rgba(255,255,255,.72)}
+footer a:hover{color:var(--lime)}
+footer .brand{color:#fff}
+footer .brand .ltd{color:rgba(255,255,255,.55)}
+footer .about{margin:18px 0 0;max-width:30em;color:rgba(255,255,255,.6)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5)}
+@media (max-width:1000px){
+.f-grid{grid-template-columns:1fr 1fr}
+.grid2{grid-template-columns:1fr;gap:30px}
+}
+@media (max-width:760px){
+.nav-links,.nav>.btn{display:none}
+.burger{display:flex}
+.navtoggle:checked~.nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--accent-d);padding:6px 24px 18px}
+.navtoggle:checked~.nav-links li a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+section{padding:64px 0}
+.band{padding:64px 0}
+.row2{grid-template-columns:1fr}
+.f-grid{grid-template-columns:1fr}
+}
+@media (max-width:1100px){
+header::before{right:0}
+.navright{display:none}
+.nav{padding:0 24px}
+}
+
+@media (max-width:1100px){
+.ph-blue{right:0}
+.pagehead .wrap{padding-right:24px;padding-left:24px}
+}
+.totop{position:fixed;right:0;bottom:0;z-index:50;width:70px;height:70px;display:grid;place-items:center;background:var(--grad);color:#fff;transition:.18s}
+.totop:hover{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+@media (max-width:760px){.totop{width:54px;height:54px}}
+.btn{position:relative;overflow:hidden;z-index:0;isolation:isolate}
+.btn::before{content:"";position:absolute;top:0;bottom:0;left:-12%;width:124%;background:linear-gradient(90deg,#0498BD 0%,#035A95 100%);transform:translateX(112%);transition:transform 2.2s cubic-bezier(.12,1.3,.24,1);z-index:-1}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleY(1)}
+.btn-o::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-o:hover,.btn-o:focus-visible{color:#fff;border-color:#0498BD}
+.btn-w::before{background:linear-gradient(90deg,#0498BD 0%,#035A95 100%)}
+.btn-w:hover,.btn-w:focus-visible{color:#fff}
+.btn-wo::before{background:#fff}
+.btn-wo:hover,.btn-wo:focus-visible{color:var(--accent-d);border-color:#fff}
+@media (prefers-reduced-motion:reduce){.btn::before{transition:none}}
+/* ---------- glass sections ---------- */
+.glass{position:relative;overflow:hidden;background:#eef5fa}
+.glass::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(560px 360px at 14% 12%, rgba(3,115,165,.26), transparent 62%),
+ radial-gradient(460px 320px at 82% 86%, rgba(201,226,96,.34), transparent 64%),
+ radial-gradient(400px 300px at 60% 20%, rgba(4,152,189,.2), transparent 60%)}
+.glass.flip::before{
+ background:radial-gradient(560px 360px at 86% 14%, rgba(3,115,165,.24), transparent 62%),
+ radial-gradient(460px 320px at 12% 84%, rgba(201,226,96,.3), transparent 64%),
+ radial-gradient(400px 300px at 40% 36%, rgba(4,152,189,.18), transparent 60%)}
+.glass .wrap{position:relative;z-index:1}
+.glass .card,.glass .quote,.glass .ccard{position:relative;border:1px solid rgba(255,255,255,.9);border-radius:22px;
+ background:rgba(255,255,255,.26);-webkit-backdrop-filter:blur(22px) saturate(1.5);backdrop-filter:blur(22px) saturate(1.5);
+ box-shadow:0 20px 54px -30px rgba(2,69,111,.6), inset 0 1px 0 rgba(255,255,255,.75)}
+.glass .card:hover,.glass .quote:hover{transform:translateY(-4px);background:rgba(255,255,255,.4);border-color:#fff;
+ box-shadow:0 26px 64px -28px rgba(2,69,111,.65), inset 0 1px 0 rgba(255,255,255,.9)}
+.glass .card .num{color:var(--accent-d)}
+.glass .card p,.glass .quote p,.glass .ccard p{color:#3d4f5c}
+.glass .card .ic{background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.8);border-radius:14px}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.glass .card,.glass .quote,.glass .ccard{background:rgba(255,255,255,.72)}
+}
+/* ---------- menu hover ---------- */
+.nav-links a{display:inline-block;transform-origin:center;will-change:transform}
+.nav-links a:hover,.nav-links a:focus-visible{animation:navwob .5s cubic-bezier(.3,.8,.4,1) forwards}
+@keyframes navwob{
+0%{transform:scale(1) rotate(0deg)}
+30%{transform:scale(1.14) rotate(-2.2deg)}
+55%{transform:scale(1.14) rotate(2.2deg)}
+78%{transform:scale(1.1) rotate(-1deg)}
+100%{transform:scale(1.09) rotate(0deg)}
+}
+
+/* ---------- reveal on scroll ---------- */
+html.js .sec-head,
+html.js .card,
+html.js .quote,
+html.js .ccard,
+html.js .tile,
+html.js .cgrid>div,
+html.js .note,
+html.js .offset .panel,
+html.js .frost,
+html.js .form,
+html.js .ticks{
+opacity:0;transform:translateY(30px);
+transition:opacity .72s cubic-bezier(.2,.7,.3,1),transform .72s cubic-bezier(.2,.7,.3,1)}
+html.js .grid2>*:first-child{transform:translateX(-38px)}
+html.js .grid2>*:last-child{transform:translateX(38px)}
+html.js .offset .panel{transform:translateX(-38px)}
+html.js .frost{transform:translateX(38px)}
+html.js .is-in.is-in.is-in{opacity:1;transform:none}
+html.js .grid4>*:nth-child(2),html.js .grid3>*:nth-child(2),html.js .gal>*:nth-child(2),html.js .cgrid>*:nth-child(2){transition-delay:.09s}
+html.js .grid4>*:nth-child(3),html.js .grid3>*:nth-child(3),html.js .gal>*:nth-child(3),html.js .cgrid>*:nth-child(3){transition-delay:.18s}
+html.js .grid4>*:nth-child(4),html.js .gal>*:nth-child(4),html.js .cgrid>*:nth-child(4){transition-delay:.27s}
+html.js .grid3>*:nth-child(4),html.js .gal>*:nth-child(5){transition-delay:.27s}
+html.js .gal>*:nth-child(6){transition-delay:.36s}
+html.js .gal>*:nth-child(7){transition-delay:.45s}
+html.js .gal>*:nth-child(8){transition-delay:.54s}
+html.js .gal>*:nth-child(9){transition-delay:.63s}
+@media (prefers-reduced-motion:reduce){
+html.js .sec-head,html.js .card,html.js .quote,html.js .ccard,html.js .tile,html.js .cgrid>div,
+html.js .note,html.js .offset .panel,html.js .frost,html.js .form,html.js .ticks,
+html.js .grid2>*:first-child,html.js .grid2>*:last-child{opacity:1;transform:none;transition:none}
+.nav-links a:hover,.nav-links a:focus-visible{animation:none}
+}
+/* ---------- map ---------- */
+.map{position:relative;line-height:0;background:#dfe9f0}
+.map iframe{width:100%;height:clamp(360px,46vw,520px);border:0;display:block}
+.map .mapcard{
+ position:absolute;top:50%;left:clamp(24px,5vw,100px);transform:translateY(-50%);z-index:2;
+ width:min(360px,80%);line-height:1.7;padding:28px 30px;border-radius:22px;
+ background:rgba(255,255,255,.62);
+ -webkit-backdrop-filter:blur(22px) saturate(1.4);backdrop-filter:blur(22px) saturate(1.4);
+ border:1px solid rgba(255,255,255,.9);
+ box-shadow:0 22px 58px -28px rgba(2,69,111,.6), inset 0 1px 0 rgba(255,255,255,.85)}
+.map .mapcard h3{margin-bottom:10px}
+.map .mapcard p{margin:0 0 18px;color:#3d4f5c;font-size:15px}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.map .mapcard{background:rgba(255,255,255,.92)}
+}
+@media (max-width:760px){
+.map .mapcard{position:static;transform:none;width:auto;border-radius:0;border-left:0;border-right:0;background:#fff}
+.map iframe{height:300px}
+}
+/* ---------- contact cards arrive from the right ---------- */
+html.js .ccard{transform:translateX(56px);
+ transition:opacity 1.3s cubic-bezier(.2,.7,.3,1),transform 1.3s cubic-bezier(.2,.7,.3,1)}
+html.js .ccard.is-in{transform:none}
+html.js .ccard:nth-of-type(2){transition-delay:.14s}
+html.js .ccard:nth-of-type(3){transition-delay:.28s}
+html.js .ccard:nth-of-type(4){transition-delay:.42s}
+html.js .ccard:nth-of-type(5){transition-delay:.56s}
+@media (prefers-reduced-motion:reduce){
+html.js .ccard{transform:none;transition:none}
+}
+/* ---------- the one box people must read ---------- */
+.keynote{position:relative;overflow:hidden;background:#eef5fa;padding:clamp(70px,8vw,110px) 0}
+.keynote::before{content:"";position:absolute;inset:0;pointer-events:none;
+ background:radial-gradient(620px 400px at 18% 14%, rgba(3,115,165,.3), transparent 62%),
+ radial-gradient(520px 340px at 84% 86%, rgba(201,226,96,.38), transparent 64%),
+ radial-gradient(420px 320px at 56% 44%, rgba(4,152,189,.22), transparent 60%)}
+.keynote .wrap{position:relative;z-index:1;max-width:none;padding-left:clamp(20px,3vw,56px);padding-right:clamp(20px,3vw,56px)}
+.keynote .note{
+ display:block;width:100%;max-width:none;margin:0;text-align:left;
+ padding:clamp(32px,4vw,52px) clamp(28px,4vw,56px);
+ border:1px solid rgba(255,255,255,.95);border-left:5px solid var(--amber);border-radius:24px;
+ background:rgba(255,255,255,.3);
+ -webkit-backdrop-filter:blur(26px) saturate(1.6);backdrop-filter:blur(26px) saturate(1.6);
+ box-shadow:0 28px 70px -34px rgba(2,69,111,.65), inset 0 1px 0 rgba(255,255,255,.9)}
+.keynote .note .kn-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.keynote .note .kn-head svg{flex:0 0 26px;color:var(--amber)}
+.keynote .note .kn-head b{font-family:var(--h);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-d)}
+.keynote .note p{margin:0;font-size:clamp(17px,1.7vw,20px);line-height:1.75;color:#24323c}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+.keynote .note{background:rgba(255,255,255,.82)}
+}
+html.js .keynote .note{transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.2,.7,.3,1),transform 1.1s cubic-bezier(.2,.7,.3,1)}
+html.js .keynote .note.is-in{transform:none}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.formerror{margin:0 0 18px;padding:14px 18px;border-radius:12px;background:rgba(232,163,61,.14);border:1px solid rgba(232,163,61,.5);color:#6b4a12;font-size:15px}
+/* ---------- no sideways movement on narrow screens ---------- */
+html{overflow-x:clip}
+@media (max-width:1000px){
+html.js .grid2>*:first-child,
+html.js .grid2>*:last-child{transform:translateY(28px)}
+}
+@media (max-width:760px){
+html.js .grid2>*:first-child,
+html.js .grid2>*:last-child,
+html.js .ccard,
+html.js .offset .panel,
+html.js .frost,
+html.js .card,
+html.js .quote,
+html.js .sec-head,
+html.js .note,
+html.js .form,
+html.js .ticks{transform:translateY(28px)}
+html.js .grid2>*.is-in,
+html.js .ccard.is-in,
+html.js .offset .panel.is-in,
+html.js .frost.is-in,
+html.js .card.is-in,
+html.js .quote.is-in,
+html.js .sec-head.is-in,
+html.js .note.is-in,
+html.js .form.is-in,
+html.js .ticks.is-in{transform:none}
+}
+.band .btn{box-shadow:0 6px 26px -6px rgba(255,255,255,.45),0 0 0 1px rgba(255,255,255,.18);transition:box-shadow .3s ease}
+.band .btn:hover,.band .btn:focus-visible{box-shadow:0 10px 34px -6px rgba(255,255,255,.6),0 0 0 1px rgba(255,255,255,.35)}
+/* ---------- small screens ---------- */
+@media (max-width:760px){
+.nav{height:70px}
+.mark{width:30px;height:30px;flex:0 0 30px}
+.brand{font-size:18px}
+.sec-head{margin-bottom:34px}
+.btn{padding:14px 26px;font-size:12.5px;letter-spacing:.09em}
+.bcta,.hero-cta{gap:10px}
+.pagehead{padding:56px 0}
+.ticks li{font-size:14.5px}
+.card{padding:26px 22px}
+.ccard{padding:20px 22px}
+}
+@media (max-width:430px){
+.wrap{padding:0 18px}
+.btn{width:100%;justify-content:center;padding:15px 18px}
+.bcta,.hero-cta{width:100%}
+.band p,.sec-head p{font-size:15.5px}
+}
+@media (max-width:760px){.nav-links a::after{display:none}}
+</style>
+<script>document.documentElement.className="js";</script>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+    <input class="navtoggle" type="checkbox" id="navtoggle" aria-label="Open menu">
+    <label class="burger" for="navtoggle" title="Menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
+    </label>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="navright">
+      <svg width="16" height="22" viewBox="0 0 16 22" fill="none" aria-hidden="true"><rect x="1" y="1" width="14" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="17.5" r="1.1" fill="currentColor"/></svg>
+      <a class="navphone" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</header>
+<div class="pagehead" style="--img:url('images/contact-banner.jpg')">
+  <span class="ph-blue"></span>
+  <div class="wrap">
+    <span class="label">Thank you</span>
+    <h1>Your message is on its way.</h1>
+    <p>We read every enquiry ourselves and come back within two working days.</p>
+  </div>
+</div>
+
+<section class="glass">
+  <div class="wrap grid2" style="align-items:start">
+    <div>
+      <h2>What happens next</h2>
+      <ul class="ticks">
+        <li><svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6" opacity=".4"/><path d="M8 12.4l2.6 2.6L16.2 9.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> We read your message and check it against the roles we are filling now</li>
+        <li><svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6" opacity=".4"/><path d="M8 12.4l2.6 2.6L16.2 9.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> We reply by email, or by phone if you asked us to</li>
+        <li><svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6" opacity=".4"/><path d="M8 12.4l2.6 2.6L16.2 9.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> If we cannot help, we say so plainly rather than leaving you waiting</li>
+      </ul>
+      <a class="btn" href="index.html">Back to the home page</a>
+    </div>
+    <div>
+      <div class="ccard"><h3>Email</h3><p><a href="mailto:ecoearth36@gmail.com">ecoearth36@gmail.com</a></p></div>
+      <div class="ccard"><h3>Telephone</h3><p><a href="tel:+447761647777">+44 7761 647777</a></p></div>
+      <div class="ccard"><h3>Hours</h3><p>08:00 – 17:00 UK time</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" style="--img:url('images/band-1.jpg')">
+  <div class="wrap">
+    <h2>Prefer to talk it through?</h2>
+    <p>The form above reaches us the same way, but if you would rather speak to someone, call or email and we will come back to you within two working days.</p>
+    <div class="bcta">
+      <a class="btn btn-w" href="mailto:ecoearth36@gmail.com">Email us</a>
+      <a class="btn btn-wo" href="tel:+447761647777">+44 7761 647777</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="EcoEarth Ltd, home"><svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="18.4" stroke="var(--lime)" stroke-width="2.8"/>
+        <ellipse cx="24" cy="24" rx="18.4" ry="7.6" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <ellipse cx="24" cy="24" rx="7.6" ry="18.4" stroke="var(--lime)" stroke-width="1.8" opacity=".55"/>
+        <path d="M12 32.8 Q24.8 16 37.6 17.6" stroke="var(--lime)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.4 5.2"/>
+        <circle cx="12" cy="32.8" r="2.8" fill="currentColor"/>
+        <circle cx="37.6" cy="17.6" r="3.2" fill="var(--lime)"/>
+      </svg><span class="bname"><i>E</i>co<i>E</i>arth<span class="ltd">LTD</span></span></a>
+        <p class="about">International agricultural recruitment. We connect skilled workers worldwide with licensed UK growers, packhouses and food producers.</p>
+      </div>
+      <div><h3>Pages</h3><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul></div>
+      <div><h3>What we cover</h3><ul>
+        <li><a href="services.html">Field Crops &amp; Harvest</a></li>
+        <li><a href="services.html">Soft Fruit &amp; Glasshouse</a></li>
+        <li><a href="services.html">Packhouse &amp; Processing</a></li>
+        <li><a href="services.html">Machinery &amp; Supervision</a></li>
+      </ul></div>
+      <div><h3>Contact</h3><ul>
+        <li><a href="mailto:ecoearth36@gmail.com">ecoearth36@gmail.com</a></li>
+        <li><a href="tel:+447761647777">+44 7761 647777</a></li>
+        <li>33 Elmcroft Avenue<br>London E11 2DU<br>United Kingdom</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 EcoEarth Ltd. Registered in England &amp; Wales, company no. 12247782.</span>
+      <span>Privacy Policy · Terms · Modern Slavery Statement</span>
+    </div>
+  </div>
+</footer>
+<a class="totop" href="#top" aria-label="Back to top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+<script>
+(function(){
+  var d=document.documentElement;
+  if(!('IntersectionObserver' in window)){d.classList.remove('js');return;}
+  var sel='.sec-head,.card,.quote,.ccard,.tile,.cgrid>div,.grid2>*,.note,.offset .panel,.frost,.form,.ticks';
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll(sel).forEach(function(el){io.observe(el);});
+})();
+(function(){
+  var ts=document.getElementById('ts');
+  if(ts)ts.value=Date.now();
+  if(location.search.indexOf('sent=error')>-1){
+    var f=document.getElementById('enquiry');
+    if(f){
+      var p=document.createElement('p');
+      p.className='formerror';
+      p.textContent='Sorry, that did not send. Please check your name and email address, or email us directly at ecoearth36@gmail.com.';
+      f.insertBefore(p,f.firstChild);
+      f.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  }
+})();
+</script>
+</body>
+</html>
